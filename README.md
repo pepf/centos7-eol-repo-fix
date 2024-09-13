@@ -26,96 +26,15 @@ CentOS 7 has reached its End of Life (EOL), which means its repositories may no 
    sudo curl -O https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-scl.repo
    ```
 
-#### Step 3: Clean YUM Cache
+#### Step 3: Clean YUM Cache & update system
 
 3. **Clean YUM Cache:**
 
    Clear the YUM cache to ensure it fetches the latest repository metadata:
 
    ```bash
-   sudo yum clean all
-   sudo yum makecache
+   sudo yum clean all && sudo yum makecache && sudo yum update
    ```
-
-#### Step 4: Update Your System
-
-4. **Update Your System:**
-
-   Now try updating your system:
-
-   ```bash
-   sudo yum update
-   ```
-
-### Method 2: Manually Edit the Repository File
-
-#### Step 1: Backup Existing Repo Files
-
-1. **Backup Existing Repo Files:**
-
-   ```bash
-   sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
-   ```
-
-#### Step 2: Edit the Repository File
-
-2. **Edit the Repository File:**
-
-   Open the repository file with a text editor:
-
-   ```bash
-   sudo nano /etc/yum.repos.d/CentOS-Base.repo
-   ```
-
-#### Step 3: Update the `baseurl`
-
-3. **Update the `baseurl`:**
-
-   Replace the `baseurl` entries with the following vault URLs:
-
-   ```ini
-   [base]
-   name=CentOS-$releasever - Base
-   baseurl=http://vault.centos.org/7.9.2009/os/$basearch/
-   gpgcheck=1
-   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-   [updates]
-   name=CentOS-$releasever - Updates
-   baseurl=http://vault.centos.org/7.9.2009/updates/$basearch/
-   gpgcheck=1
-   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-
-   [extras]
-   name=CentOS-$releasever - Extras
-   baseurl=http://vault.centos.org/7.9.2009/extras/$basearch/
-   gpgcheck=1
-   gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
-   ```
-
-   Save the file and exit the editor.
-
-#### Step 4: Clean YUM Cache
-
-4. **Clean YUM Cache:**
-
-   Clear the YUM cache to ensure it fetches the latest repository metadata:
-
-   ```bash
-   sudo yum clean all
-   sudo yum makecache
-   ```
-
-#### Step 5: Update Your System
-
-5. **Update Your System:**
-
-   Now try updating your system:
-
-   ```bash
-   sudo yum update
-   ```
-
 
 ## Connect with me:
 
