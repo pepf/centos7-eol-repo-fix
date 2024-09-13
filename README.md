@@ -7,12 +7,10 @@ CentOS 7 has reached its End of Life (EOL), which means its repositories may no 
 
 #### Step 1: Backup Existing Repo Files
 
-1. **Backup Existing Repo Files:**
+1. **Backup Existing Repo File:**
 
    ```bash
    sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
-   sudo cp /etc/yum.repos.dCentOS-SCLo-rh.repo /etc/yum.repos.dCentOS-SCLo-rh.repo.bak
-   sudo cp /etc/yum.repos.d/CentOS-SCLo-sclo.repo /etc/yum.repos.d/CentOS-SCLo-sclo.repo.bak
    ```
 
 #### Step 2: Download the Updated Repository File
