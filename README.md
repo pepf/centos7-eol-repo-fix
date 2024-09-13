@@ -2,7 +2,8 @@
 
 CentOS 7 has reached its End of Life (EOL), which means its repositories may no longer be maintained and accessible. However, you can still use some workarounds to keep your CentOS 7 system functional by pointing to alternative or archived repositories.
 
-### Method 1: Automatically Replace the Repository File
+
+### Method 1: Automatically Replace the Repository Files
 
 #### Step 1: Backup Existing Repo Files
 
@@ -10,6 +11,8 @@ CentOS 7 has reached its End of Life (EOL), which means its repositories may no 
 
    ```bash
    sudo cp /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+   sudo cp /etc/yum.repos.dCentOS-SCLo-rh.repo /etc/yum.repos.dCentOS-SCLo-rh.repo.bak
+   sudo cp /etc/yum.repos.d/CentOS-SCLo-sclo.repo /etc/yum.repos.d/CentOS-SCLo-sclo.repo.bak
    ```
 
 #### Step 2: Download the Updated Repository File
@@ -17,7 +20,10 @@ CentOS 7 has reached its End of Life (EOL), which means its repositories may no 
 2. **Download the Updated Repository File:**
 
    ```bash
-   sudo wget -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/AtlasGondal/centos7-eol-repo-fix/main/CentOS-Base.repo
+   cd /etc/yum.repos.d/
+   sudo curl -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-Base.repo
+   sudo curl -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-rh.repo
+   sudo curl -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-sclo.repo
    ```
 
 #### Step 3: Clean YUM Cache
