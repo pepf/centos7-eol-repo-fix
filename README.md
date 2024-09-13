@@ -21,9 +21,9 @@ CentOS 7 has reached its End of Life (EOL), which means its repositories may no 
 
    ```bash
    cd /etc/yum.repos.d/
-   sudo curl -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-Base.repo
-   sudo curl -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-rh.repo
-   sudo curl -O /etc/yum.repos.d/CentOS-Base.repo https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-sclo.repo
+   sudo curl -O https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-Base.repo
+   sudo curl -O https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-scl-rh.repo 
+   sudo curl -O https://raw.githubusercontent.com/pepf/centos7-eol-repo-fix/main/CentOS-SCLo-scl.repo
    ```
 
 #### Step 3: Clean YUM Cache
